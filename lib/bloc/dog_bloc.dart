@@ -20,7 +20,6 @@ class DogBloc extends Bloc<DogEvent, DogState> {
   }
   @override
   Stream<DogState> mapEventToState(DogEvent event) async* {
-    var log = Logger();
     if (event is InitialEvent) {
       try {
         late final List<DogModel> _dogList;
@@ -28,8 +27,6 @@ class DogBloc extends Bloc<DogEvent, DogState> {
         _dogList = await dogRepository.fetchDogs("");
         yield DogLoadedState(dogList: _dogList);
       } catch (e) {
-        print(e.toString());
-          log.wtf(e);
         yield DogErrorState(error: "Error fetching dog List");
       }
     }
@@ -40,8 +37,6 @@ class DogBloc extends Bloc<DogEvent, DogState> {
         _dogList = await dogRepository.fetchDogs(event.query.toString());
         yield DogLoadedState(dogList: _dogList);
       } catch (e) {
-        print(e.toString());
-        log.w(e);
         yield DogErrorState(error: "Error searching for this dog ");
       }
     }

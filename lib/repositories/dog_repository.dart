@@ -1,11 +1,8 @@
 import 'dart:convert';
-
-import 'package:logger/logger.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_search_list/models/dog_model.dart';
 
 class DogRepository {
-  var log = Logger();
 
   Future<List<DogModel>> fetchDogs(String query) async {
     final response = await http.get(
@@ -27,7 +24,6 @@ class DogRepository {
           return dogModel.name!.toLowerCase().contains(query.toLowerCase()) ||
             dogModel.bredFor.toString().toLowerCase().contains(query.toLowerCase());
         }).toList();
-        log.d(_searchedDogs);
       }
       return _searchedDogs;
     } else {

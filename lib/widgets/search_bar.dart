@@ -19,15 +19,11 @@ class SearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-          // top: 5,
-          // left: 5,
-          // right: 20,
           bottom: 10,
           ),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Container(
-          // margin: const EdgeInsets.only(top: 10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.grey[50],
@@ -35,7 +31,6 @@ class SearchBar extends StatelessWidget {
               color: Colors.purple,
               width: 1,
             ),
-            //  color: Style.Colors.whiteColor,
           ),
           child: Padding(
             padding: const EdgeInsets.all(5.0),
@@ -53,7 +48,6 @@ class SearchBar extends StatelessWidget {
                   return null;
                 }
               },
-              // onChanged: ,
               onChanged: onSubmitted,
               decoration: InputDecoration(
                 prefixIcon: IconButton(
@@ -66,7 +60,6 @@ class SearchBar extends StatelessWidget {
 
                   fontSize: 13,
                   color: Colors.grey,
-                  // color: const Color(0xFF4F4F4F),
                 ),
                 border: InputBorder.none,
                 enabledBorder: InputBorder.none,

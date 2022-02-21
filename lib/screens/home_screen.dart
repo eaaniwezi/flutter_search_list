@@ -116,7 +116,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     minHeight: 20,
                                                     minWidth: 200,
                                                   ),
-                                                  // width: double.infinity,
                                                   child: Text(
                                                     model.bredFor == null
                                                         ? ""
